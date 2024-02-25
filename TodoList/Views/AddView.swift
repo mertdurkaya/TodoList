@@ -20,7 +20,7 @@ struct AddView: View {
                     .background(Color(.systemGray6))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .multilineTextAlignment(.center)
-                
+                    .padding(.vertical, 16)
                 Button(action: {
                     print("Button Tapped")
                 }, label: {

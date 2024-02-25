@@ -9,12 +9,16 @@ import SwiftUI
 
 struct ListView: View {
     
-    @State private var items: [String] = ["First", "Second", "Third"]
+    @State private var items: [ItemModel] = [
+        ItemModel(title: "Test 1", isCompleted: false),
+        ItemModel(title: "Test 2", isCompleted: true),
+        ItemModel(title: "Test 3", isCompleted: false),
+    ]
     
     var body: some View {
         List {
-            ForEach(items, id: \.self) { item in
-                ListRowView(title: item)
+            ForEach(items) { item in
+                ListRowView(item: item)
             }
         }
         .navigationTitle("Todo List 📝")
