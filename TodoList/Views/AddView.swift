@@ -9,6 +9,10 @@ import SwiftUI
 
 struct AddView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var listViewModel: ListViewModel
+    @State private var alertTitle: String = ""
+    @State private var showAlert: Bool = false
     @State private var text: String = ""
     
     var body: some View {
@@ -21,9 +25,7 @@ struct AddView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .multilineTextAlignment(.center)
                     .padding(.vertical, 16)
-                Button(action: {
-                    print("Button Tapped")
-                }, label: {
+                Button(action: saveButtonTapped, label: {
                     Text("Add")
                         .textCase(.uppercase)
                         .frame(maxWidth: .infinity)
@@ -36,7 +38,28 @@ struct AddView: View {
             }
             .padding()
         }
-        .navigationTitle("Add Item 🔏")
+        .navigationTitle("Add Item ✏️")
+        .alert(isPresented: $showAlert, content: getAlert)
+    }
+    
+    func saveButtonTapped() {
+        if isTextProper() {
+            listViewModel.addItem(title: text)
+            presentationMode.wrappedValue.dismiss()
+        }
+    }
+    
+    func isTextProper() -> Bool {
+        if text.count < 3 {
+            alertTitle = "Text is too short ❌"
+            showAlert.toggle()
+            return false
+        }
+        return true
+    }
+    
+    func getAlert() -> Alert {
+        return Alert(title: Text(alertTitle))
     }
 }
 
@@ -44,4 +67,5 @@ struct AddView: View {
     NavigationStack {
         AddView()
     }
+    .environmentObject(ListViewModel())
 }
