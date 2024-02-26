@@ -26,8 +26,7 @@ struct AddView: View {
                     .multilineTextAlignment(.center)
                     .padding(.vertical, 16)
                 Button(action: saveButtonTapped, label: {
-                    Text("Add")
-                        .textCase(.uppercase)
+                    Text("Add Item")
                         .frame(maxWidth: .infinity)
                         .frame(height: 48)
                         .font(.headline)
@@ -38,7 +37,7 @@ struct AddView: View {
             }
             .padding()
         }
-        .navigationTitle("Add Item ✏️")
+        .navigationTitle("Add New Item ✏️")
         .alert(isPresented: $showAlert, content: getAlert)
     }
     
@@ -51,7 +50,7 @@ struct AddView: View {
     
     func isTextProper() -> Bool {
         if text.count < 3 {
-            alertTitle = "Text is too short ❌"
+            alertTitle = "Text is too short!"
             showAlert.toggle()
             return false
         }
@@ -59,7 +58,7 @@ struct AddView: View {
     }
     
     func getAlert() -> Alert {
-        return Alert(title: Text(alertTitle))
+        return Alert(title: Text("❌"), message: Text(alertTitle))
     }
 }
 
