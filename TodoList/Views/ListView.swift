@@ -37,6 +37,8 @@ struct ListView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 EditButton()
+                    .opacity(!listViewModel.items.isEmpty ? 1 : 0)
+                
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink("Add") {

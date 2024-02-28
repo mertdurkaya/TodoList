@@ -18,28 +18,29 @@ struct NoItemsView: View {
                     .font(.title)
                     .fontWeight(.semibold)
                 Text("You can add a new item by clicking the button at the top right corner.")
-                    .font(.subheadline)
+                    .font(.headline)
                     .foregroundColor(.gray)
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 16)
                 NavigationLink("Add Item 🥳", destination: AddView())
                     .foregroundStyle(.white)
                     .font(.title3)
                     .bold()
                     .frame(height: 48)
-                    .frame(maxWidth: UIScreen.main.bounds.width / 2)
+                    .frame(maxWidth: .infinity)
                     .background(animate ? secondaryAccentColor : Color.accentColor)
                     .clipShape(
                         RoundedRectangle(cornerRadius: 10, style: .continuous)
                     )
-                    .padding(.horizontal, animate ? 32 : 48)
+                    .padding(.horizontal, animate ? 36 : 42)
                     .shadow(color: animate ? secondaryAccentColor.opacity(0.7) : Color.accentColor.opacity(0.7),
-                            radius: animate ? 30 : 10,
+                            radius: animate ? 32 : 8,
                             x: 0,
                             y: animate ? 48 : 32)
-                    .scaleEffect(animate ? 1.1 : 1.0)
-                    .offset(y: animate ? -3 : 0)
+                    .scaleEffect(animate ? 1.05 : 1.0)
+                    .offset(y: animate ? 0 : 3)
                 
             }
+            .frame(maxWidth: 400)
             .multilineTextAlignment(.center)
             .padding()
             .onAppear(perform: addAnimation)
