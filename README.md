@@ -6,15 +6,15 @@ TodoList is a simple task management application built using SwiftUI.
 
 To run this project locally, follow these steps:
 
-    1. Clone the repository:
+1. Clone the repository:
     
     ```bash
     git clone https://github.com/mertdurkaya/TodoList.git
     ```
     
-    2. Open the project in Xcode.
+2. Open the project in Xcode.
 
-    3. Build and run the project using the built-in simulator or connect your iOS device and run it.
+3. Build and run the project using the built-in simulator or connect your iOS device and run it.
 
 ## Technologies Used
 
