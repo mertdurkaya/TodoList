@@ -30,6 +30,7 @@
 		4E5CE9BD2B8B67EB00B1C8B9 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		4E5CE9C02B8B83FC00B1C8B9 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		4E5CE9C42B8BA48A00B1C8B9 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		4EE0977E2BA227F1008EDDD7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4EF337BB2B8D462A00A7809C /* NoItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +48,7 @@
 		4E5CE99E2B8B61AF00B1C8B9 = {
 			isa = PBXGroup;
 			children = (
+				4EE0977E2BA227F1008EDDD7 /* README.md */,
 				4E5CE9A92B8B61AF00B1C8B9 /* TodoList */,
 				4E5CE9A82B8B61AF00B1C8B9 /* Products */,
 			);
